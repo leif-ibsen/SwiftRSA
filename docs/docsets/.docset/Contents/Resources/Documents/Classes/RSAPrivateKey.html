@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RSAPrivateKey Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/RSAPrivateKey" class="dashAnchor"></a>
+    <a title="RSAPrivateKey Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
+        <div class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        RSAPrivateKey Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/RSA.html">RSA</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RSA/KeyFormat.html">– KeyFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RSA/MessageDigestAlgorithm.html">– MessageDigestAlgorithm</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RSA/Exception.html">– Exception</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RSAPrivateKey.html">RSAPrivateKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RSAPublicKey.html">RSAPublicKey</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Base64.html">Base64</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftRSA4Bytea">Byte</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>RSAPrivateKey</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">RSAPrivateKey</span> <span class="p">:</span> <span class="kt">CustomStringConvertible</span></code></pre>
+
+                </div>
+              </div>
+            <p>An RSA private key</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initializers"></a>
+                <a name="//apple_ref/swift/Section/Initializers" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Initializers"></a>
+                  <h3 class="section-name"><span>Initializers</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftRSA13RSAPrivateKeyC3der6formatACSays5UInt8VG_AA0B0C0D6FormatOtKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(der:format:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA13RSAPrivateKeyC3der6formatACSays5UInt8VG_AA0B0C0D6FormatOtKcfc">init(der:<wbr>format:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a private key from its DER encoding - X509 format or PKCS#8 format</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    An exception if the DER encoding is wrong
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">der</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span><span class="p">,</span> <span class="nv">format</span><span class="p">:</span> <span class="kt"><a href="../Classes/RSA.html">RSA</a></span><span class="o">.</span><span class="kt">KeyFormat</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>der</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The DER encoding of the key</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>format</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key format</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftRSA13RSAPrivateKeyC3pem6formatACSS_AA0B0C0D6FormatOtKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(pem:format:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA13RSAPrivateKeyC3pem6formatACSS_AA0B0C0D6FormatOtKcfc">init(pem:<wbr>format:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a private key from its PEM encoding - X509 format or PKCS#8 format</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    An exception if the PEM encoding is wrong
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">pem</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">format</span><span class="p">:</span> <span class="kt"><a href="../Classes/RSA.html">RSA</a></span><span class="o">.</span><span class="kt">KeyFormat</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>pem</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The PEM encoding of the key</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>format</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key format</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Stored%20Properties"></a>
+                <a name="//apple_ref/swift/Section/Stored Properties" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Stored%20Properties"></a>
+                  <h3 class="section-name"><span>Stored Properties</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftRSA13RSAPrivateKeyC1n6BigInt4BIntVvp"></a>
+                    <a name="//apple_ref/swift/Property/n" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA13RSAPrivateKeyC1n6BigInt4BIntVvp">n</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The modulus</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">n</span><span class="p">:</span> <span class="kt">BInt</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftRSA13RSAPrivateKeyC1e6BigInt4BIntVvp"></a>
+                    <a name="//apple_ref/swift/Property/e" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA13RSAPrivateKeyC1e6BigInt4BIntVvp">e</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The public exponent</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">e</span><span class="p">:</span> <span class="kt">BInt</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftRSA13RSAPrivateKeyC1d6BigInt4BIntVvp"></a>
+                    <a name="//apple_ref/swift/Property/d" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA13RSAPrivateKeyC1d6BigInt4BIntVvp">d</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The private exponent</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">d</span><span class="p">:</span> <span class="kt">BInt</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftRSA13RSAPrivateKeyC1p6BigInt4BIntVvp"></a>
+                    <a name="//apple_ref/swift/Property/p" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA13RSAPrivateKeyC1p6BigInt4BIntVvp">p</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The p primefactor</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">p</span><span class="p">:</span> <span class="kt">BInt</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftRSA13RSAPrivateKeyC1q6BigInt4BIntVvp"></a>
+                    <a name="//apple_ref/swift/Property/q" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA13RSAPrivateKeyC1q6BigInt4BIntVvp">q</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The q primefactor</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">q</span><span class="p">:</span> <span class="kt">BInt</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftRSA13RSAPrivateKeyC2dP6BigInt4BIntVvp"></a>
+                    <a name="//apple_ref/swift/Property/dP" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA13RSAPrivateKeyC2dP6BigInt4BIntVvp">dP</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The p CRT exponent</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">dP</span><span class="p">:</span> <span class="kt">BInt</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftRSA13RSAPrivateKeyC2dQ6BigInt4BIntVvp"></a>
+                    <a name="//apple_ref/swift/Property/dQ" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA13RSAPrivateKeyC2dQ6BigInt4BIntVvp">dQ</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The q CRT exponent</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">dQ</span><span class="p">:</span> <span class="kt">BInt</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftRSA13RSAPrivateKeyC4qInv6BigInt4BIntVvp"></a>
+                    <a name="//apple_ref/swift/Property/qInv" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA13RSAPrivateKeyC4qInv6BigInt4BIntVvp">qInv</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The CRT coefficient</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">qInv</span><span class="p">:</span> <span class="kt">BInt</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Computed%20Properties"></a>
+                <a name="//apple_ref/swift/Section/Computed Properties" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Computed%20Properties"></a>
+                  <h3 class="section-name"><span>Computed Properties</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftRSA13RSAPrivateKeyC06publicD0AA09RSAPublicD0Cvp"></a>
+                    <a name="//apple_ref/swift/Property/publicKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA13RSAPrivateKeyC06publicD0AA09RSAPublicD0Cvp">publicKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The public key corresponding to <em>self</em></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">publicKey</span><span class="p">:</span> <span class="kt"><a href="../Classes/RSAPublicKey.html">RSAPublicKey</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftRSA13RSAPrivateKeyC11descriptionSSvp"></a>
+                    <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA13RSAPrivateKeyC11descriptionSSvp">description</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An ASN1 representation of <em>self</em></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Instance%20Methods"></a>
+                <a name="//apple_ref/swift/Section/Instance Methods" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Instance%20Methods"></a>
+                  <h3 class="section-name"><span>Instance Methods</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftRSA13RSAPrivateKeyC10derEncoded6formatSays5UInt8VGAA0B0C0D6FormatO_tF"></a>
+                    <a name="//apple_ref/swift/Method/derEncoded(format:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA13RSAPrivateKeyC10derEncoded6formatSays5UInt8VGAA0B0C0D6FormatO_tF">derEncoded(format:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get the DER encoded ASN1 representation of <em>self</em> in <em>X509</em> or <em>PKCS#8</em> format</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">derEncoded</span><span class="p">(</span><span class="nv">format</span><span class="p">:</span> <span class="kt"><a href="../Classes/RSA.html">RSA</a></span><span class="o">.</span><span class="kt">KeyFormat</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>format</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>X509 or PKCS#8 format</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The DER encoded ASN1 representation of <em>self</em></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftRSA13RSAPrivateKeyC10pemEncoded6formatSSAA0B0C0D6FormatO_tF"></a>
+                    <a name="//apple_ref/swift/Method/pemEncoded(format:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA13RSAPrivateKeyC10pemEncoded6formatSSAA0B0C0D6FormatO_tF">pemEncoded(format:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get the PEM encoded representation of <em>self</em> in <em>X509</em> or <em>PKCS#8</em> format</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">pemEncoded</span><span class="p">(</span><span class="nv">format</span><span class="p">:</span> <span class="kt"><a href="../Classes/RSA.html">RSA</a></span><span class="o">.</span><span class="kt">KeyFormat</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>format</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>X509 or PKCS#8 format</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The PEM encoded representation of <em>self</em></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftRSA13RSAPrivateKeyC12decryptPKCS16cipherSays5UInt8VGAH_tKF"></a>
+                    <a name="//apple_ref/swift/Method/decryptPKCS1(cipher:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA13RSAPrivateKeyC12decryptPKCS16cipherSays5UInt8VGAH_tKF">decryptPKCS1(cipher:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Decrypts a byte array using the PKCS1 scheme</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    A <em>decryption</em> exception if decryption fails
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">decryptPKCS1</span><span class="p">(</span><span class="nv">cipher</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>cipher</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The bytes to decrypt</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The decrypted message</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftRSA13RSAPrivateKeyC9signPKCS17message3mdaSays5UInt8VGAI_AA0B0C22MessageDigestAlgorithmOtKF"></a>
+                    <a name="//apple_ref/swift/Method/signPKCS1(message:mda:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA13RSAPrivateKeyC9signPKCS17message3mdaSays5UInt8VGAI_AA0B0C22MessageDigestAlgorithmOtKF">signPKCS1(message:<wbr>mda:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Signs a message using the PKCS1 scheme</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    A <em>sign</em> exception if signing fails
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">signPKCS1</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span><span class="p">,</span> <span class="nv">mda</span><span class="p">:</span> <span class="kt"><a href="../Classes/RSA.html">RSA</a></span><span class="o">.</span><span class="kt">MessageDigestAlgorithm</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The message to sign</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mda</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The message digest algorithm to use</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The signature</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftRSA13RSAPrivateKeyC11decryptOAEP6cipher3mda5labelSays5UInt8VGAJ_AA0B0C22MessageDigestAlgorithmOAJtKF"></a>
+                    <a name="//apple_ref/swift/Method/decryptOAEP(cipher:mda:label:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA13RSAPrivateKeyC11decryptOAEP6cipher3mda5labelSays5UInt8VGAJ_AA0B0C22MessageDigestAlgorithmOAJtKF">decryptOAEP(cipher:<wbr>mda:<wbr>label:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Decrypts a byte array using the OAEP scheme</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    A <em>decryption</em> exception if decryption fails
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">decryptOAEP</span><span class="p">(</span><span class="nv">cipher</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span><span class="p">,</span> <span class="nv">mda</span><span class="p">:</span> <span class="kt"><a href="../Classes/RSA.html">RSA</a></span><span class="o">.</span><span class="kt">MessageDigestAlgorithm</span><span class="p">,</span> <span class="nv">label</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span> <span class="o">=</span> <span class="p">[])</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>cipher</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The bytes to decrypt</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mda</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The message digest algorithm to use</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>label</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional label - default is an empty array</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The decrypted message</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftRSA13RSAPrivateKeyC7signPSS7message3mdaSays5UInt8VGAI_AA0B0C22MessageDigestAlgorithmOtKF"></a>
+                    <a name="//apple_ref/swift/Method/signPSS(message:mda:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA13RSAPrivateKeyC7signPSS7message3mdaSays5UInt8VGAI_AA0B0C22MessageDigestAlgorithmOtKF">signPSS(message:<wbr>mda:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Signs a message using the PSS scheme</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    A <em>sign</em> exception if signing fails
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">signPSS</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span><span class="p">,</span> <span class="nv">mda</span><span class="p">:</span> <span class="kt"><a href="../Classes/RSA.html">RSA</a></span><span class="o">.</span><span class="kt">MessageDigestAlgorithm</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The message to sign</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mda</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The message digest algorithm to use</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The signature</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2022 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2022-02-24)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>
