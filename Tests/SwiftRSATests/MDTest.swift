@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import SwiftRSA
 
 // Test vectors from http://www.di-mgt.com.au/sha_testvectors.html
 class MDTest: XCTestCase {

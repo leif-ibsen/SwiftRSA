@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import SwiftRSA
 
 // Test vectors from Wycheproof - files
 //    rsa_pkcs1_2048_test.json

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>MessageDigestAlgorithm Enumeration Reference</title>
+    <title>PublicExponent Enumeration Reference</title>
     <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,11 +13,11 @@
     <script src="../../js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/MessageDigestAlgorithm" class="dashAnchor"></a>
-    <a title="MessageDigestAlgorithm Enumeration Reference"></a>
+    <a name="//apple_ref/swift/Enum/PublicExponent" class="dashAnchor"></a>
+    <a title="PublicExponent Enumeration Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../../index.html">SwiftRSA Docs</a> (100% documented)</p>
+        <p><a href="../../index.html"> Docs</a> (100% documented)</p>
         <div class="header-right">
           <form role="search" action="../../search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
@@ -27,9 +27,9 @@
     </header>
     <div class="content-wrapper">
       <p id="breadcrumbs">
-        <a href="../../index.html">SwiftRSA Reference</a>
+        <a href="../../index.html"> Reference</a>
         <img id="carat" src="../../img/carat.png" alt=""/>
-        MessageDigestAlgorithm Enumeration Reference
+        PublicExponent Enumeration Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -42,7 +42,10 @@
                 <a href="../../Classes/RSA.html">RSA</a>
               </li>
               <li class="nav-group-task">
-                <a href="../../Classes/RSA/KeyFormat.html">– KeyFormat</a>
+                <a href="../../Classes/RSA/KeySize.html">– KeySize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/RSA/PublicExponent.html">– PublicExponent</a>
               </li>
               <li class="nav-group-task">
                 <a href="../../Classes/RSA/MessageDigestAlgorithm.html">– MessageDigestAlgorithm</a>
@@ -82,15 +85,15 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>MessageDigestAlgorithm</h1>
+            <h1>PublicExponent</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">MessageDigestAlgorithm</span> <span class="p">:</span> <span class="kt">CaseIterable</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">PublicExponent</span> <span class="p">:</span> <span class="kt">CustomStringConvertible</span></code></pre>
 
                 </div>
               </div>
-            <p>Message digest algorithms</p>
+            <p>Public exponent values</p>
 
           </section>
           <section class="section task-group-section">
@@ -99,9 +102,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftRSA0B0C22MessageDigestAlgorithmO4SHA1yA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/SHA1" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftRSA0B0C22MessageDigestAlgorithmO4SHA1yA2EmF">SHA1</a>
+                    <a name="/s:8SwiftRSA0B0C14PublicExponentO11descriptionSSvp"></a>
+                    <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA0B0C14PublicExponentO11descriptionSSvp">description</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -109,14 +112,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The SHA1 message digest</p>
+                        <p>Textual description of <em>self</em></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SHA1</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -126,9 +129,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftRSA0B0C22MessageDigestAlgorithmO8SHA2_224yA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/SHA2_224" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftRSA0B0C22MessageDigestAlgorithmO8SHA2_224yA2EmF">SHA2_224</a>
+                    <a name="/s:8SwiftRSA0B0C14PublicExponentO2E3yA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/E3" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA0B0C14PublicExponentO2E3yA2EmF">E3</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -136,14 +139,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The SHA2 224 message digest</p>
+                        <p>Exponent 3</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SHA2_224</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">E3</span></code></pre>
 
                         </div>
                       </div>
@@ -153,9 +156,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftRSA0B0C22MessageDigestAlgorithmO8SHA2_256yA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/SHA2_256" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftRSA0B0C22MessageDigestAlgorithmO8SHA2_256yA2EmF">SHA2_256</a>
+                    <a name="/s:8SwiftRSA0B0C14PublicExponentO2E5yA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/E5" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA0B0C14PublicExponentO2E5yA2EmF">E5</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -163,14 +166,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The SHA2 256 message digest</p>
+                        <p>Exponent 5</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SHA2_256</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">E5</span></code></pre>
 
                         </div>
                       </div>
@@ -180,9 +183,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftRSA0B0C22MessageDigestAlgorithmO8SHA2_384yA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/SHA2_384" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftRSA0B0C22MessageDigestAlgorithmO8SHA2_384yA2EmF">SHA2_384</a>
+                    <a name="/s:8SwiftRSA0B0C14PublicExponentO3E17yA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/E17" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA0B0C14PublicExponentO3E17yA2EmF">E17</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -190,14 +193,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The SHA2 384 message digest</p>
+                        <p>Exponent 17</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SHA2_384</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">E17</span></code></pre>
 
                         </div>
                       </div>
@@ -207,9 +210,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftRSA0B0C22MessageDigestAlgorithmO8SHA2_512yA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/SHA2_512" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftRSA0B0C22MessageDigestAlgorithmO8SHA2_512yA2EmF">SHA2_512</a>
+                    <a name="/s:8SwiftRSA0B0C14PublicExponentO4E257yA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/E257" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA0B0C14PublicExponentO4E257yA2EmF">E257</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -217,14 +220,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The SHA2 512 message digest</p>
+                        <p>Exponent 257</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SHA2_512</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">E257</span></code></pre>
 
                         </div>
                       </div>
@@ -234,9 +237,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftRSA0B0C22MessageDigestAlgorithmO8SHA3_224yA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/SHA3_224" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftRSA0B0C22MessageDigestAlgorithmO8SHA3_224yA2EmF">SHA3_224</a>
+                    <a name="/s:8SwiftRSA0B0C14PublicExponentO6E65537yA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/E65537" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA0B0C14PublicExponentO6E65537yA2EmF">E65537</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -244,14 +247,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The SHA3 224 message digest</p>
+                        <p>Exponent 65537</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SHA3_224</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">E65537</span></code></pre>
 
                         </div>
                       </div>
@@ -261,9 +264,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftRSA0B0C22MessageDigestAlgorithmO8SHA3_256yA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/SHA3_256" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftRSA0B0C22MessageDigestAlgorithmO8SHA3_256yA2EmF">SHA3_256</a>
+                    <a name="/s:8SwiftRSA0B0C14PublicExponentO9GeneratedyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/Generated" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA0B0C14PublicExponentO9GeneratedyA2EmF">Generated</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -271,68 +274,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The SHA3 256 message digest</p>
+                        <p>Generated exponent</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SHA3_256</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8SwiftRSA0B0C22MessageDigestAlgorithmO8SHA3_384yA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/SHA3_384" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftRSA0B0C22MessageDigestAlgorithmO8SHA3_384yA2EmF">SHA3_384</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The SHA3 384 message digest</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SHA3_384</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8SwiftRSA0B0C22MessageDigestAlgorithmO8SHA3_512yA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/SHA3_512" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftRSA0B0C22MessageDigestAlgorithmO8SHA3_512yA2EmF">SHA3_512</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The SHA3 512 message digest</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SHA3_512</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Generated</span></code></pre>
 
                         </div>
                       </div>
@@ -344,8 +293,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2023 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2023-04-19)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+          <p>&copy; 2022 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2022-02-12)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>

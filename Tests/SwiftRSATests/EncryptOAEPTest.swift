@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import SwiftRSA
 
 // Test vectors from Wycheproof - files
 //    rsa_oaep_2048_sha256_mgf1sha256_test.json

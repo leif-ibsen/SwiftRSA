@@ -28,7 +28,7 @@ SwiftRSA requires Swift 5.0. It also requires that the Int and UInt types be 64 
 In your project Package.swift file add a dependency like<br/>
 
 	  dependencies: [
-	  .package(url: "https://github.com/leif-ibsen/SwiftRSA", from: "1.0.1"),
+	  .package(url: "https://github.com/leif-ibsen/SwiftRSA", from: "1.1.0"),
 	  ]
 <h2 id="basic"><b>Basics</b></h2>
 
@@ -197,7 +197,7 @@ the timing may vary from one test to another due to the randomness involved in t
 <tr><td align="left">Sign PKCS1</td><td align="right">1.6 mSec</td><td align="right">5.5 mSec</td><td align="right">13 mSec</td><td align="right">25 mSec</td></tr>
 <tr><td align="left">Verify PKCS1</td><td align="right">0.081 mSec</td><td align="right">0.18 mSec</td><td align="right">0.35 mSec</td><td align="right">0.58 mSec</td></tr>
 <tr><td align="left">Sign PSS</td><td align="right">1.6 mSec</td><td align="right">5.5 mSec</td><td align="right">12 mSec</td><td align="right">25 mSec</td></tr>
-<tr><td align="left">Verify PSS</td><td align="right">0.095 mSec</td><td align="right">0.21</td> mSec</td><td align="right">0.39 mSec</td><td align="right">0.63 mSec</td></tr>
+<tr><td align="left">Verify PSS</td><td align="right">0.095 mSec</td><td align="right">0.21 mSec</td><td align="right">0.39 mSec</td><td align="right">0.63 mSec</td></tr>
 <tr><td align="left">Encrypt PKCS1</td><td align="right">0.084 mSec</td><td align="right">0.18 mSec</td><td align="right">0.35 mSec</td><td align="right">0.58 mSec</td></tr>
 <tr><td align="left">Decrypt PKCS1</td><td align="right">1.5 mSec</td><td align="right">5.4 mSec</td><td align="right">13 mSec</td><td align="right">25 mSec</td></tr>
 <tr><td align="left">Encrypt OAEP</td><td align="right">0.099 mSec</td><td align="right">0.22 mSec</td><td align="right">0.40 mSec</td><td align="right">0.64 mSec</td></tr>
@@ -209,8 +209,8 @@ The SHA2 256 message digest was used in the measurements, the public exponent wa
 The SwiftRSA package depends on the ASN1 and BigInt packages
 
     dependencies: [
-        .package(url: "https://github.com/leif-ibsen/ASN1", from: "2.0.1"),
-        .package(url: "https://github.com/leif-ibsen/BigInt", from: "1.2.12"),
+        .package(url: "https://github.com/leif-ibsen/ASN1", from: "2.1.0"),
+        .package(url: "https://github.com/leif-ibsen/BigInt", from: "1.11.0"),
     ],
 <h2 id="ref"><b>References</b></h2>
 

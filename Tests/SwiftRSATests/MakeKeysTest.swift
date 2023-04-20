@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import SwiftRSA
 import BigInt
 
 class MakeKeysTest: XCTestCase {

@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import SwiftRSA
 import BigInt
 
 // Test vectors from Wycheproof - file rsa_sig_gen_misc_test.json
