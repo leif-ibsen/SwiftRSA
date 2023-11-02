@@ -28,7 +28,7 @@ SwiftRSA requires Swift 5.0. It also requires that the Int and UInt types be 64 
 In your project Package.swift file add a dependency like<br/>
 
 	  dependencies: [
-	  .package(url: "https://github.com/leif-ibsen/SwiftRSA", from: "1.1.0"),
+	  .package(url: "https://github.com/leif-ibsen/SwiftRSA", from: "1.2.0"),
 	  ]
 <h2 id="basic"><b>Basics</b></h2>
 
@@ -209,8 +209,8 @@ The SHA2 256 message digest was used in the measurements, the public exponent wa
 The SwiftRSA package depends on the ASN1 and BigInt packages
 
     dependencies: [
-        .package(url: "https://github.com/leif-ibsen/ASN1", from: "2.1.0"),
-        .package(url: "https://github.com/leif-ibsen/BigInt", from: "1.11.0"),
+        .package(url: "https://github.com/leif-ibsen/ASN1", from: "2.2.0"),
+        .package(url: "https://github.com/leif-ibsen/BigInt", from: "1.14.0"),
     ],
 <h2 id="ref"><b>References</b></h2>
 
