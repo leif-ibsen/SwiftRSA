@@ -7,7 +7,7 @@
 
 import ASN1
 import BigInt
-import OpenGL
+import Digest
 
 ///
 /// An 8-bit unsigned integer
@@ -42,29 +42,28 @@ public class RSA {
         return b
     }
     
-    // [PKCS1] - appendix B.2.1
-    static func mgf1(_ seed: Bytes, _ length: Int, _ mda: MessageDigestAlgorithm) -> Bytes {
-        let md = MessageDigest(mda)
-        var t: Bytes = []
-        var counter: Bytes = [0, 0, 0, 0]
-        let n = length == 0 ? 0 : (length - 1) / md.digestLength + 1
-        for _ in 0 ..< n {
-            md.update(seed)
-            md.update(counter)
-            let h = md.digest()
-            t += h
-            counter[3] &+= 1
-            if counter[3] == 0 {
-                counter[2] &+= 1
-                if counter[2] == 0 {
-                    counter[1] &+= 1
-                    if counter[1] == 0 {
-                        counter[0] &+= 1
-                    }
-                }
-            }
+    static func digestInfo(_ kind: MessageDigest.Kind) -> Bytes {
+        switch kind {
+        case .SHA1:
+            return [48, 33, 48, 9, 6, 5, 43, 14, 3, 2, 26, 5, 0, 4, 20]
+        case .SHA2_224:
+            return [48, 45, 48, 13, 6, 9, 96, 134, 72, 1, 101, 3, 4, 2, 4, 5, 0, 4, 28]
+        case .SHA2_256:
+            return [48, 49, 48, 13, 6, 9, 96, 134, 72, 1, 101, 3, 4, 2, 1, 5, 0, 4, 32]
+        case .SHA2_384:
+            return [48, 65, 48, 13, 6, 9, 96, 134, 72, 1, 101, 3, 4, 2, 2, 5, 0, 4, 48]
+        case .SHA2_512:
+            return [48, 81, 48, 13, 6, 9, 96, 134, 72, 1, 101, 3, 4, 2, 3, 5, 0, 4, 64]
+        case .SHA3_224:
+            return [48, 45, 48, 13, 6, 9, 96, 134, 72, 1, 101, 3, 4, 2, 7, 5, 0, 4, 28]
+        case .SHA3_256:
+            return [48, 49, 48, 13, 6, 9, 96, 134, 72, 1, 101, 3, 4, 2, 8, 5, 0, 4, 32]
+        case .SHA3_384:
+            return [48, 65, 48, 13, 6, 9, 96, 134, 72, 1, 101, 3, 4, 2, 9, 5, 0, 4, 48]
+        case .SHA3_512:
+            return [48, 81, 48, 13, 6, 9, 96, 134, 72, 1, 101, 3, 4, 2, 10, 5, 0, 4, 64]
         }
-        return Bytes(t[0 ..< length])
+
     }
 
 
@@ -150,30 +149,6 @@ public class RSA {
         case X509
         /// The PKCS#8 key format
         case PKCS8
-    }
-
-    ///
-    /// Message digest algorithms
-    ///
-    public enum MessageDigestAlgorithm: CaseIterable {
-        /// The SHA1 message digest
-        case SHA1
-        /// The SHA2 224 message digest
-        case SHA2_224
-        /// The SHA2 256 message digest
-        case SHA2_256
-        /// The SHA2 384 message digest
-        case SHA2_384
-        /// The SHA2 512 message digest
-        case SHA2_512
-        /// The SHA3 224 message digest
-        case SHA3_224
-        /// The SHA3 256 message digest
-        case SHA3_256
-        /// The SHA3 384 message digest
-        case SHA3_384
-        /// The SHA3 512 message digest
-        case SHA3_512
     }
 
     ///

@@ -7,6 +7,7 @@
 
 import XCTest
 @testable import SwiftRSA
+import Digest
 
 class EncryptionTest: XCTestCase {
 
@@ -34,15 +35,15 @@ class EncryptionTest: XCTestCase {
         let cipher1 = try pub.encryptPKCS1(message: msg)
         let msg1 = try priv.decryptPKCS1(cipher: cipher1)
         XCTAssertEqual(msg, msg1)
-        for mda in RSA.MessageDigestAlgorithm.allCases {
+        for kind in MessageDigest.Kind.allCases {
             do {
                 for l in labels {
-                    let cipher2 = try pub.encryptOAEP(message: msg, mda: mda, label: l)
-                    let msg2 = try priv.decryptOAEP(cipher: cipher2, mda: mda, label: l)
+                    let cipher2 = try pub.encryptOAEP(message: msg, kind: kind, label: l)
+                    let msg2 = try priv.decryptOAEP(cipher: cipher2, kind: kind, label: l)
                     XCTAssertEqual(msg, msg2)
                 }
             } catch RSA.Exception.encrypt {
-                let md = MessageDigest(mda)
+                let md = MessageDigest(kind)
                 XCTAssertTrue(msg.count > pub.n.magnitude.count * 8 - 2 * md.digestLength - 2)
             }
         }

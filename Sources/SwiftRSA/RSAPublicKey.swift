@@ -8,6 +8,7 @@
 import Foundation
 import BigInt
 import ASN1
+import Digest
 
 ///
 /// An RSA public key
@@ -184,23 +185,24 @@ public class RSAPublicKey: CustomStringConvertible {
     /// - Parameters:
     ///   - signature: The signature to verify
     ///   - message: The message to verify the signature for
-    ///   - mda: The message digest algorithm to use
+    ///   - kind: The message digest kind to use
     /// - Returns: *true* if the signature is verified, *false* otherwise
-    public func verifyPKCS1(signature: Bytes, message: Bytes, mda: RSA.MessageDigestAlgorithm) -> Bool {
+    public func verifyPKCS1(signature: Bytes, message: Bytes, kind: MessageDigest.Kind) -> Bool {
         // [PKCS1] - section 8.2.2
         let k = self.n.magnitude.count * 8
         if signature.count != k {
             return false
         }
-        let md = MessageDigest(mda)
+        let md = MessageDigest(kind)
         md.update(message)
         let h = md.digest()
         var EM: Bytes = [0, 1]
-        for _ in 0 ..< k - h.count - md.digestInfo.count - 3 {
+        let di = RSA.digestInfo(kind)
+        for _ in 0 ..< k - h.count - di.count - 3 {
             EM.append(0xff)
         }
         EM.append(0)
-        EM.append(contentsOf: md.digestInfo)
+        EM.append(contentsOf: di)
         EM.append(contentsOf: h)
 
         let s = RSA.OS2IP(signature)
@@ -213,15 +215,15 @@ public class RSAPublicKey: CustomStringConvertible {
     ///
     /// - Parameters:
     ///   - message: The bytes to encrypt
-    ///   - mda: The message digest algorithm to use
+    ///   - kind: The message digest kind to use
     ///   - label: An optional label - default is an empty array
     /// - Returns: The encrypted message
     /// - Throws: A *encrypt* exception if encryption fails
-    public func encryptOAEP(message: Bytes, mda: RSA.MessageDigestAlgorithm, label: Bytes = []) throws -> Bytes {
+    public func encryptOAEP(message: Bytes, kind: MessageDigest.Kind, label: Bytes = []) throws -> Bytes {
         // [PKCS1] - section 7.1.1
         let k = self.n.magnitude.count * 8
         let mLen = message.count
-        let md = MessageDigest(mda)
+        let md = MessageDigest(kind)
         let hLen = md.digestLength
         if mLen > k - 2 * hLen - 2 {
             throw RSA.Exception.encrypt(size: k - 2 * hLen - 2)
@@ -234,12 +236,12 @@ public class RSAPublicKey: CustomStringConvertible {
         guard SecRandomCopyBytes(kSecRandomDefault, hLen, &seed) == errSecSuccess else {
             fatalError("randomBytes failed")
         }
-        let dbMask = RSA.mgf1(seed, k - hLen - 1, mda)
+        let dbMask = KDF.MGF1(kind, seed, k - hLen - 1)
         var maskedDB = DB
         for i in 0 ..< maskedDB.count {
             maskedDB[i] ^= dbMask[i]
         }
-        let seedMask = RSA.mgf1(maskedDB, hLen, mda)
+        let seedMask = KDF.MGF1(kind, maskedDB, hLen)
         var maskedSeed = seed
         for i in 0 ..< maskedSeed.count {
             maskedSeed[i] ^= seedMask[i]
@@ -256,9 +258,9 @@ public class RSAPublicKey: CustomStringConvertible {
     /// - Parameters:
     ///   - signature: The signature to verify
     ///   - message: The message to verify the signature for
-    ///   - mda: The message digest algorithm to use
+    ///   - kind: The message digest kind to use
     /// - Returns: *true* if the signature is verified, *false* otherwise
-    public func verifyPSS(signature: Bytes, message: Bytes, mda: RSA.MessageDigestAlgorithm) -> Bool {
+    public func verifyPSS(signature: Bytes, message: Bytes, kind: MessageDigest.Kind) -> Bool {
         // [PKCS1] - section 8.1.2
         let k = self.n.magnitude.count * 8
         if signature.count != k {
@@ -267,11 +269,11 @@ public class RSAPublicKey: CustomStringConvertible {
         let s = RSA.OS2IP(signature)
         let m = s.expMod(self.e, self.n)
         let EM = RSA.I2OSP(m, k)
-        return PSSVerify(message, EM, k, mda)
+        return PSSVerify(message, EM, k, kind)
     }
 
-    func PSSVerify(_ message: Bytes, _ EM: Bytes, _ k: Int, _ mda: RSA.MessageDigestAlgorithm) -> Bool {
-        let md = MessageDigest(mda)
+    func PSSVerify(_ message: Bytes, _ EM: Bytes, _ k: Int, _ kind: MessageDigest.Kind) -> Bool {
+        let md = MessageDigest(kind)
         let hLen = md.digestLength
         if k < 2 * hLen + 2 {
             return false
@@ -286,7 +288,7 @@ public class RSAPublicKey: CustomStringConvertible {
         if maskedDB[0] >> 7 != 0 {
             return false
         }
-        let dbMask = RSA.mgf1(H, k - hLen - 1, mda)
+        let dbMask = KDF.MGF1(kind, H, k - hLen - 1)
         var DB = maskedDB
         for i in 0 ..< DB.count {
             DB[i] ^= dbMask[i]

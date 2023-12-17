@@ -21,14 +21,13 @@ SwiftRSA provides RSA cryptography in Swift. This encompasses:
 <li>Loading existing keys from their PEM and DER encodings</li>
 <li>Encryption and decryption using either the PKCS1 scheme or the OAEP scheme</li>
 <li>Signature signing and verifying using either the PKCS1 scheme or the PSS scheme</li>
-<li>Support for SHA1, SHA2 and SHA3 message digests</li>
 </ul>
 SwiftRSA requires Swift 5.0. It also requires that the Int and UInt types be 64 bit types.
 <h2 id="use"><b>Usage</b></h2>
 In your project Package.swift file add a dependency like<br/>
 
 	  dependencies: [
-	  .package(url: "https://github.com/leif-ibsen/SwiftRSA", from: "1.2.0"),
+	  .package(url: "https://github.com/leif-ibsen/SwiftRSA", from: "2.0.0"),
 	  ]
 <h2 id="basic"><b>Basics</b></h2>
 
@@ -155,25 +154,25 @@ You need a public key - say 'pubKey' - to encrypt a message and the correspondin
 <h4>PKCS1 Example</h4>
 
 	let pkcs1Cipher = try pubKey.encryptPKCS1(message: [1, 2, 3])
-	let clearTekst = try privKey.decryptPKCS1(cipher: pkcs1Cipher)
+	let clearText = try privKey.decryptPKCS1(cipher: pkcs1Cipher)
 
 <h4>OAEP Example</h4>
 
-	let oaepCipher = try pubKey.encryptOAEP(message: [1, 2, 3], mda: .SHA3_256, label: [4, 5, 6])
-	let clearTekst = try privKey.decryptOAEP(cipher: oaepCipher, mda: .SHA3_256, label: [4, 5, 6])
+	let oaepCipher = try pubKey.encryptOAEP(message: [1, 2, 3], kind: .SHA3_256, label: [4, 5, 6])
+	let clearText = try privKey.decryptOAEP(cipher: oaepCipher, kind: .SHA3_256, label: [4, 5, 6])
 
 <h3 id="basic4"><b>Signing and Verifying</b></h3>
 
 You need a private key - say 'privKey' - to sign a message and the corresponding public key - say 'pubKey' - to verify the signature.
 <h4>PKCS1 Example</h4>
 
-    let pkcs1Signature = try privKey.signPKCS1(message: [1, 2, 3], mda: .SHA3_256)
-    let ok = pubKey.verifyPKCS1(signature: pkcs1Signature, message: [1, 2, 3], mda: .SHA3_256)
+    let pkcs1Signature = try privKey.signPKCS1(message: [1, 2, 3], kind: .SHA3_256)
+    let ok = pubKey.verifyPKCS1(signature: pkcs1Signature, message: [1, 2, 3], kind: .SHA3_256)
 
 <h4>PSS Example</h4>
 
-    let pssSignature = try privKey.signPSS(message: [1, 2, 3], mda: .SHA3_256)
-    let ok = pubKey.verifyPSS(signature: pssSignature, message: [1, 2, 3], mda: .SHA3_256)
+    let pssSignature = try privKey.signPSS(message: [1, 2, 3], kind: .SHA3_256)
+    let ok = pubKey.verifyPSS(signature: pssSignature, message: [1, 2, 3], kind: .SHA3_256)
 
 <h2 id="perf"><b>Performance</b></h2>
 To assess the performance of SwiftRSA, the keypair generation time, the signature generation and verification time,
@@ -206,11 +205,12 @@ the timing may vary from one test to another due to the randomness involved in t
 The SHA2 256 message digest was used in the measurements, the public exponent was 65537.
 <h2 id="dep"><b>Dependencies</b></h2>
 
-The SwiftRSA package depends on the ASN1 and BigInt packages
+The SwiftRSA package depends on the ASN1, BigInt and Digest packages.
 
     dependencies: [
         .package(url: "https://github.com/leif-ibsen/ASN1", from: "2.2.0"),
         .package(url: "https://github.com/leif-ibsen/BigInt", from: "1.14.0"),
+        .package(url: "https://github.com/leif-ibsen/Digest", from: "1.1.0"),
     ],
 <h2 id="ref"><b>References</b></h2>
 

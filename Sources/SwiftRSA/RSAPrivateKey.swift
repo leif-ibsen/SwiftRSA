@@ -8,6 +8,7 @@
 import Foundation
 import BigInt
 import ASN1
+import Digest
 
 ///
 /// An RSA private key
@@ -275,24 +276,25 @@ public class RSAPrivateKey: CustomStringConvertible {
     ///
     /// - Parameters:
     ///   - message: The message to sign
-    ///   - mda: The message digest algorithm to use
+    ///   - kind: The message digest kind to use
     /// - Returns: The signature
     /// - Throws: A *sign* exception if signing fails
-    public func signPKCS1(message: Bytes, mda: RSA.MessageDigestAlgorithm) throws -> Bytes {
+    public func signPKCS1(message: Bytes, kind: MessageDigest.Kind) throws -> Bytes {
         // [PKCS1] - section 8.2.1
         let k = self.n.magnitude.count * 8
-        let md = MessageDigest(mda)
-        if k < md.digestInfo.count + md.digestLength + 11 {
-            throw RSA.Exception.sign(size: (md.digestInfo.count + md.digestLength + 11) * 8)
+        let md = MessageDigest(kind)
+        let di = RSA.digestInfo(kind)
+        if k < di.count + md.digestLength + 11 {
+            throw RSA.Exception.sign(size: (di.count + md.digestLength + 11) * 8)
         }
         md.update(message)
         let h = md.digest()
         var EM: Bytes = [0, 1]
-        for _ in 0 ..< k - h.count - md.digestInfo.count - 3 {
+        for _ in 0 ..< k - h.count - di.count - 3 {
             EM.append(0xff)
         }
         EM.append(0)
-        EM.append(contentsOf: md.digestInfo)
+        EM.append(contentsOf:di)
         EM.append(contentsOf: h)
         let m = RSA.OS2IP(EM)
         let s = RSASDP(m)
@@ -303,18 +305,18 @@ public class RSAPrivateKey: CustomStringConvertible {
     ///
     /// - Parameters:
     ///   - cipher: The bytes to decrypt
-    ///   - mda: The message digest algorithm to use
+    ///   - kind: The message digest kind to use
     ///   - label: An optional label - default is an empty array
     /// - Returns: The decrypted message
     /// - Throws: A *decryption* exception if decryption fails
-    public func decryptOAEP(cipher: Bytes, mda: RSA.MessageDigestAlgorithm, label: Bytes = []) throws -> Bytes {
+    public func decryptOAEP(cipher: Bytes, kind: MessageDigest.Kind, label: Bytes = []) throws -> Bytes {
         // [PKCS1] - section 7.1.2
         let k = self.n.magnitude.count * 8
         let mLen = cipher.count
         if mLen != k {
             throw RSA.Exception.decrypt(size: k)
         }
-        let md = MessageDigest(mda)
+        let md = MessageDigest(kind)
         let hLen = md.digestLength
         if k < 2 * hLen + 2 {
             throw RSA.Exception.decrypt()
@@ -329,12 +331,12 @@ public class RSAPrivateKey: CustomStringConvertible {
         }
         let maskedSeed = Bytes(EM[1 ... hLen])
         let maskedDB = Bytes(EM[hLen + 1 ..< EM.count])
-        let seedMask = RSA.mgf1(maskedDB, hLen, mda)
+        let seedMask = KDF.MGF1(kind, maskedDB, hLen)
         var seed = maskedSeed
         for i in 0 ..< seed.count {
             seed[i] ^= seedMask[i]
         }
-        let dbMask = RSA.mgf1(seed, k - hLen - 1, mda)
+        let dbMask = KDF.MGF1(kind, seed, k - hLen - 1)
         var DB = maskedDB
         for i in 0 ..< DB.count {
             DB[i] ^= dbMask[i]
@@ -356,13 +358,13 @@ public class RSAPrivateKey: CustomStringConvertible {
     ///
     /// - Parameters:
     ///   - message: The message to sign
-    ///   - mda: The message digest algorithm to use
+    ///   - kind: The message digest kind to use
     /// - Returns: The signature
     /// - Throws: A *sign* exception if signing fails
-    public func signPSS(message: Bytes, mda: RSA.MessageDigestAlgorithm) throws -> Bytes {
+    public func signPSS(message: Bytes, kind: MessageDigest.Kind) throws -> Bytes {
         // [PKCS1] - section 8.1.1
         let k = self.n.magnitude.count * 8
-        let md = MessageDigest(mda)
+        let md = MessageDigest(kind)
         md.update(message)
         let hLen = md.digestLength
         if k < 2 * hLen + 2 {
@@ -378,7 +380,7 @@ public class RSAPrivateKey: CustomStringConvertible {
         let H = md.digest()
         let PS = Bytes(repeating: 0, count: k - 2 * hLen - 2)
         let DB = PS + [0x01] + salt
-        let dbMask = RSA.mgf1(H, k - hLen - 1, mda)
+        let dbMask = KDF.MGF1(kind, H, k - hLen - 1)
         var maskedDB = DB
         for i in 0 ..< maskedDB.count {
             maskedDB[i] ^= dbMask[i]

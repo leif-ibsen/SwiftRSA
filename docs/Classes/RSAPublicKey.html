@@ -45,9 +45,6 @@
                 <a href="../Classes/RSA/KeyFormat.html">– KeyFormat</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/RSA/MessageDigestAlgorithm.html">– MessageDigestAlgorithm</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Classes/RSA/Exception.html">– Exception</a>
               </li>
               <li class="nav-group-task">
@@ -509,9 +506,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftRSA12RSAPublicKeyC11verifyPKCS19signature7message3mdaSbSays5UInt8VG_AjA0B0C22MessageDigestAlgorithmOtF"></a>
-                    <a name="//apple_ref/swift/Method/verifyPKCS1(signature:message:mda:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftRSA12RSAPublicKeyC11verifyPKCS19signature7message3mdaSbSays5UInt8VG_AjA0B0C22MessageDigestAlgorithmOtF">verifyPKCS1(signature:<wbr>message:<wbr>mda:<wbr>)</a>
+                    <a name="/s:8SwiftRSA12RSAPublicKeyC11verifyPKCS19signature7message4kindSbSays5UInt8VG_AJ6Digest07MessageK0C4KindOtF"></a>
+                    <a name="//apple_ref/swift/Method/verifyPKCS1(signature:message:kind:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA12RSAPublicKeyC11verifyPKCS19signature7message4kindSbSays5UInt8VG_AJ6Digest07MessageK0C4KindOtF">verifyPKCS1(signature:<wbr>message:<wbr>kind:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -526,7 +523,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">verifyPKCS1</span><span class="p">(</span><span class="nv">signature</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span><span class="p">,</span> <span class="nv">mda</span><span class="p">:</span> <span class="kt"><a href="../Classes/RSA.html">RSA</a></span><span class="o">.</span><span class="kt">MessageDigestAlgorithm</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">verifyPKCS1</span><span class="p">(</span><span class="nv">signature</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span><span class="p">,</span> <span class="nv">kind</span><span class="p">:</span> <span class="kt">MessageDigest</span><span class="o">.</span><span class="kt">Kind</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -561,12 +558,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>mda</em>
+                                <em>kind</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The message digest algorithm to use</p>
+                                  <p>The message digest kind to use</p>
                                 </div>
                               </td>
                             </tr>
@@ -583,9 +580,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftRSA12RSAPublicKeyC11encryptOAEP7message3mda5labelSays5UInt8VGAJ_AA0B0C22MessageDigestAlgorithmOAJtKF"></a>
-                    <a name="//apple_ref/swift/Method/encryptOAEP(message:mda:label:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftRSA12RSAPublicKeyC11encryptOAEP7message3mda5labelSays5UInt8VGAJ_AA0B0C22MessageDigestAlgorithmOAJtKF">encryptOAEP(message:<wbr>mda:<wbr>label:<wbr>)</a>
+                    <a name="/s:8SwiftRSA12RSAPublicKeyC11encryptOAEP7message4kind5labelSays5UInt8VGAJ_6Digest07MessageK0C4KindOAJtKF"></a>
+                    <a name="//apple_ref/swift/Method/encryptOAEP(message:kind:label:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA12RSAPublicKeyC11encryptOAEP7message4kind5labelSays5UInt8VGAJ_6Digest07MessageK0C4KindOAJtKF">encryptOAEP(message:<wbr>kind:<wbr>label:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -605,7 +602,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">encryptOAEP</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span><span class="p">,</span> <span class="nv">mda</span><span class="p">:</span> <span class="kt"><a href="../Classes/RSA.html">RSA</a></span><span class="o">.</span><span class="kt">MessageDigestAlgorithm</span><span class="p">,</span> <span class="nv">label</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span> <span class="o">=</span> <span class="p">[])</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">encryptOAEP</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span><span class="p">,</span> <span class="nv">kind</span><span class="p">:</span> <span class="kt">MessageDigest</span><span class="o">.</span><span class="kt">Kind</span><span class="p">,</span> <span class="nv">label</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span> <span class="o">=</span> <span class="p">[])</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span></code></pre>
 
                         </div>
                       </div>
@@ -628,12 +625,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>mda</em>
+                                <em>kind</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The message digest algorithm to use</p>
+                                  <p>The message digest kind to use</p>
                                 </div>
                               </td>
                             </tr>
@@ -662,9 +659,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8SwiftRSA12RSAPublicKeyC9verifyPSS9signature7message3mdaSbSays5UInt8VG_AjA0B0C22MessageDigestAlgorithmOtF"></a>
-                    <a name="//apple_ref/swift/Method/verifyPSS(signature:message:mda:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8SwiftRSA12RSAPublicKeyC9verifyPSS9signature7message3mdaSbSays5UInt8VG_AjA0B0C22MessageDigestAlgorithmOtF">verifyPSS(signature:<wbr>message:<wbr>mda:<wbr>)</a>
+                    <a name="/s:8SwiftRSA12RSAPublicKeyC9verifyPSS9signature7message4kindSbSays5UInt8VG_AJ6Digest07MessageK0C4KindOtF"></a>
+                    <a name="//apple_ref/swift/Method/verifyPSS(signature:message:kind:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8SwiftRSA12RSAPublicKeyC9verifyPSS9signature7message4kindSbSays5UInt8VG_AJ6Digest07MessageK0C4KindOtF">verifyPSS(signature:<wbr>message:<wbr>kind:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -679,7 +676,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">verifyPSS</span><span class="p">(</span><span class="nv">signature</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span><span class="p">,</span> <span class="nv">mda</span><span class="p">:</span> <span class="kt"><a href="../Classes/RSA.html">RSA</a></span><span class="o">.</span><span class="kt">MessageDigestAlgorithm</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">verifyPSS</span><span class="p">(</span><span class="nv">signature</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftRSA5Bytesa">Bytes</a></span><span class="p">,</span> <span class="nv">kind</span><span class="p">:</span> <span class="kt">MessageDigest</span><span class="o">.</span><span class="kt">Kind</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -714,12 +711,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>mda</em>
+                                <em>kind</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The message digest algorithm to use</p>
+                                  <p>The message digest kind to use</p>
                                 </div>
                               </td>
                             </tr>
@@ -738,8 +735,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2023 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2023-11-02)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+          <p>&copy; 2023 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2023-12-17)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>

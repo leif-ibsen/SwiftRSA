@@ -37,7 +37,7 @@ class ExceptionTest: XCTestCase {
     func testSign() {
         do {
             let (_, priv) = try RSA.makeKeyPair(size: 1024, exponent: RSA.F4)
-            let _ = try priv.signPSS(message: [1, 2, 3], mda: .SHA2_512)
+            let _ = try priv.signPSS(message: [1, 2, 3], kind: .SHA2_512)
             XCTFail("Expected sign exception")
         } catch RSA.Exception.sign {
         } catch {
