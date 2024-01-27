@@ -16,12 +16,8 @@ public typealias Byte = UInt8
 ///
 /// An array of 8-bit unsigned integers
 ///
-public typealias Bytes = [Byte]
+public typealias Bytes = [UInt8]
 
-///
-/// There is no RSA instances.
-/// RSA exists to provide a namespace. It contains static key pair generation methods
-///
 public class RSA {
     
     private init() {

@@ -10,9 +10,6 @@ import BigInt
 import ASN1
 import Digest
 
-///
-/// An RSA private key
-///
 public class RSAPrivateKey: CustomStringConvertible {
 
     init(_ p: BInt, _ q: BInt, _ e: BInt, _ d: BInt) {

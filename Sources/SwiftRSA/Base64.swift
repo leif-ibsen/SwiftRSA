@@ -5,10 +5,6 @@
 //  Created by Leif Ibsen on 02/02/2022.
 //
 
-///
-/// There is no Base64 instances.
-/// Base64 exists to provide a namespace. It contains static functions for Base64 encoding and decoding.
-///
 public struct Base64 {
 
     static let base64chars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P",
