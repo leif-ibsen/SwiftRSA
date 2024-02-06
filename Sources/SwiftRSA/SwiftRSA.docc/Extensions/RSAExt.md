@@ -2,8 +2,7 @@
 
 ## Overview
 
-There is no RSA instances.
-RSA exists to provide a namespace. It contains static methods for key pair generation.
+RSA exists to provide a namespace. It contains static methods for key pair generation. There is no RSA instances.
 
 ## Topics
 

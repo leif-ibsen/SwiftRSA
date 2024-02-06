@@ -4,6 +4,7 @@
 
 To assess the performance of SwiftRSA, the keypair generation time, the signature generation and verification time,
 and the encryption and decryption time was measured on an iMac 2021, Apple M1 chip.
+
 The results are shown in the table below - units are milliseconds. The rows mean:
 
 * Make Keypair: The time it takes to generate a public/private keypair -
@@ -18,7 +19,7 @@ the timing may vary from one test to another due to the randomness involved in t
 * Decrypt OAEP: The time a decryption operation takes using the OAEP scheme
 
 | Modulus size  | 1024       | 2048        | 3072        | 4096        |
-|---------------|------------|-------------|-------------|-------------|
+|:--------------|-----------:|------------:|------------:|------------:|
 | Make Keypair  | ~ 50 mSec  | ~ 250 mSec  | ~ 1500 mSec | ~ 2400 mSec |
 | Sign PKCS1    | 1.6 mSec   | 5.5 mSec    | 13 mSec     | 25 mSec     |
 | Verify PKCS1  | 0.081 mSec | 0.18 mSec   | 0.35 mSec   | 0.58 mSec   |

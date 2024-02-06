@@ -10,6 +10,7 @@ import BigInt
 import ASN1
 import Digest
 
+/// The private key
 public class RSAPrivateKey: CustomStringConvertible {
 
     init(_ p: BInt, _ q: BInt, _ e: BInt, _ d: BInt) {
@@ -182,9 +183,9 @@ public class RSAPrivateKey: CustomStringConvertible {
 
     // MARK: Computed Properties
 
-    /// The public key corresponding to *self*
+    /// The public key corresponding to `self`
     public var publicKey: RSAPublicKey { get { return RSAPublicKey(self.n, self.e) } }
-    /// An ASN1 representation of *self*
+    /// ASN1 representation of `self`
     public var description: String { get { return ASN1Sequence()
             .add(ASN1.ZERO)
             .add(ASN1Integer(self.n))
@@ -199,11 +200,11 @@ public class RSAPrivateKey: CustomStringConvertible {
     
     // MARK: Instance Methods
 
-    /// Get the DER encoded ASN1 representation of *self* in *X509* or *PKCS#8* format
+    /// Get the DER encoded ASN1 representation of `self` in *X509* or *PKCS#8* format
     ///
     /// - Parameters:
     ///   - format: X509 or PKCS#8 format
-    /// - Returns: The DER encoded ASN1 representation of *self*
+    /// - Returns: The DER encoded ASN1 representation of `self`
     public func derEncoded(format: RSA.KeyFormat) -> Bytes {
         let privKey = ASN1Sequence()
             .add(ASN1.ZERO)
@@ -225,11 +226,11 @@ public class RSAPrivateKey: CustomStringConvertible {
         }
     }
 
-    /// Get the PEM encoded representation of *self* in *X509* or *PKCS#8* format
+    /// Get the PEM encoded representation of `self` in *X509* or *PKCS#8* format
     ///
     /// - Parameters:
     ///   - format: X509 or PKCS#8 format
-    /// - Returns: The PEM encoded representation of *self*
+    /// - Returns: The PEM encoded representation of `self`
     public func pemEncoded(format: RSA.KeyFormat) -> String {
         let der = self.derEncoded(format: format)
         switch format {
@@ -245,7 +246,7 @@ public class RSAPrivateKey: CustomStringConvertible {
     /// - Parameters:
     ///   - cipher: The bytes to decrypt
     /// - Returns: The decrypted message
-    /// - Throws: A *decryption* exception if decryption fails
+    /// - Throws: A `decryption` exception if decryption fails
     public func decryptPKCS1(cipher: Bytes) throws -> Bytes {
         // [PKCS1] - section 7.2.2
         let k = self.n.magnitude.count * 8
@@ -275,7 +276,7 @@ public class RSAPrivateKey: CustomStringConvertible {
     ///   - message: The message to sign
     ///   - kind: The message digest kind to use
     /// - Returns: The signature
-    /// - Throws: A *sign* exception if signing fails
+    /// - Throws: A `sign` exception if signing fails
     public func signPKCS1(message: Bytes, kind: MessageDigest.Kind) throws -> Bytes {
         // [PKCS1] - section 8.2.1
         let k = self.n.magnitude.count * 8
@@ -305,7 +306,7 @@ public class RSAPrivateKey: CustomStringConvertible {
     ///   - kind: The message digest kind to use
     ///   - label: An optional label - default is an empty array
     /// - Returns: The decrypted message
-    /// - Throws: A *decryption* exception if decryption fails
+    /// - Throws: A `decryption` exception if decryption fails
     public func decryptOAEP(cipher: Bytes, kind: MessageDigest.Kind, label: Bytes = []) throws -> Bytes {
         // [PKCS1] - section 7.1.2
         let k = self.n.magnitude.count * 8
@@ -357,7 +358,7 @@ public class RSAPrivateKey: CustomStringConvertible {
     ///   - message: The message to sign
     ///   - kind: The message digest kind to use
     /// - Returns: The signature
-    /// - Throws: A *sign* exception if signing fails
+    /// - Throws: A `sign` exception if signing fails
     public func signPSS(message: Bytes, kind: MessageDigest.Kind) throws -> Bytes {
         // [PKCS1] - section 8.1.1
         let k = self.n.magnitude.count * 8

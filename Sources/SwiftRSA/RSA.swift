@@ -9,13 +9,10 @@ import ASN1
 import BigInt
 import Digest
 
-///
-/// An 8-bit unsigned integer
-///
+/// Unsigned 8 bit value
 public typealias Byte = UInt8
-///
-/// An array of 8-bit unsigned integers
-///
+
+/// Array of unsigned 8 bit values
 public typealias Bytes = [UInt8]
 
 public class RSA {
@@ -137,9 +134,7 @@ public class RSA {
     
     // MARK: Enumerations
     
-    ///
-    /// Key formats
-    ///
+    /// RSA key formats
     public enum KeyFormat {
         /// The X509 key format
         case X509
@@ -147,9 +142,7 @@ public class RSA {
         case PKCS8
     }
 
-    ///
     /// RSA exceptions
-    ///
     public enum Exception: Error, CustomStringConvertible {
         
         public var description: String {
