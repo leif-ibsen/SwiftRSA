@@ -1,5 +1,7 @@
 # ``SwiftRSA/RSAPrivateKey``
 
+The private key
+
 ## Topics
 
 ### Properties

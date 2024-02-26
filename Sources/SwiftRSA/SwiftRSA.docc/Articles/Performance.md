@@ -1,5 +1,7 @@
 # Performance
 
+Execution times for certain SwiftRSA operations
+
 ## 
 
 To assess the performance of SwiftRSA, the keypair generation time, the signature generation and verification time,

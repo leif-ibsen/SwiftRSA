@@ -67,6 +67,7 @@ public class RSA {
     /// - Parameters:
     ///   - size: The size of the RSA modulus - at least 1024, divisible by 64
     /// - Returns: The RSA key pair
+    /// - Throws: A `makeKeyPairParameters` exception if the parameters are wrong
     public static func makeKeyPair(size: Int) throws -> (RSAPublicKey, RSAPrivateKey) {
         let b = BInt.ONE << 256 - RSA.F4
         var e: BInt
@@ -85,6 +86,7 @@ public class RSA {
     ///   - size: The size of the RSA modulus - at least 1024, divisible by 64
     ///   - exponent: The public exponent - an odd number in the interval [65537 .. 2^256 - 1]
     /// - Returns: The RSA key pair
+    /// - Throws: A `makeKeyPairParameters` exception if the parameters are wrong
     public static func makeKeyPair(size: Int, exponent: BInt) throws -> (RSAPublicKey, RSAPrivateKey) {
         if size < 1024 || size & 0x3f != 0 {
             throw RSA.Exception.makeKeyPairParameters
@@ -119,6 +121,7 @@ public class RSA {
     ///   - size: The size of the RSA modulus - at least 1024, divisible by 64
     ///   - expWidth: The public exponent bit width - a number in the interval [17 .. 256]
     /// - Returns: The RSA key pair
+    /// - Throws: A `makeKeyPairParameters` exception if the parameters are wrong
     public static func makeKeyPair(size: Int, expWidth: Int) throws -> (RSAPublicKey, RSAPrivateKey) {
         if expWidth < 17 || expWidth > 256 {
             throw RSA.Exception.makeKeyPairParameters
@@ -134,7 +137,7 @@ public class RSA {
     
     // MARK: Enumerations
     
-    /// RSA key formats
+    /// The RSA key formats
     public enum KeyFormat {
         /// The X509 key format
         case X509
@@ -142,7 +145,7 @@ public class RSA {
         case PKCS8
     }
 
-    /// RSA exceptions
+    /// The RSA exceptions
     public enum Exception: Error, CustomStringConvertible {
         
         public var description: String {

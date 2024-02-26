@@ -10,7 +10,6 @@ import BigInt
 import ASN1
 import Digest
 
-/// The public key
 public class RSAPublicKey: CustomStringConvertible {
 
     init(_ n: BInt, _ e: BInt) {
