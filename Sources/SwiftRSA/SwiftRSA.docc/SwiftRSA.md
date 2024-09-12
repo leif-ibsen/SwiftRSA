@@ -53,7 +53,7 @@ To use SwiftRSA, in your project *Package.swift* file add a dependency like
 
 ```swift
 dependencies: [
-  .package(url: "https://github.com/leif-ibsen/SwiftRSA", from: "2.4.0"),
+  .package(url: "https://github.com/leif-ibsen/SwiftRSA", from: "2.5.0"),
 ]
 ```
 
@@ -61,9 +61,9 @@ SwiftRSA itself depends on the ASN1, BigInt and Digest packages
 
 ```swift
 dependencies: [
-  .package(url: "https://github.com/leif-ibsen/ASN1", from: "2.4.0"),
-  .package(url: "https://github.com/leif-ibsen/BigInt", from: "1.16.0"),
-  .package(url: "https://github.com/leif-ibsen/Digest", from: "1.3.0"),
+  .package(url: "https://github.com/leif-ibsen/ASN1", from: "2.6.0"),
+  .package(url: "https://github.com/leif-ibsen/BigInt", from: "1.19.0"),
+  .package(url: "https://github.com/leif-ibsen/Digest", from: "1.7.0"),
 ],
 ```
 
@@ -77,10 +77,6 @@ SwiftRSA requires Swift 5.0. It also requires that the `Int` and `UInt` types be
 - ``SwiftRSA/RSA``
 - ``SwiftRSA/RSAPrivateKey``
 - ``SwiftRSA/RSAPublicKey``
-
-### Structures
-
-- ``SwiftRSA/Base64``
 
 ### Type Aliases
 

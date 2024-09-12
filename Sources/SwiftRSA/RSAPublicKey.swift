@@ -88,9 +88,15 @@ public class RSAPublicKey: CustomStringConvertible {
     public convenience init(pem: String, format: RSA.KeyFormat) throws {
         switch format {
         case .X509:
-            try self.init(der: Base64.pemDecode(pem, "RSA PUBLIC KEY"), format: .X509)
+            guard let der = Base64.pemDecode(pem, "RSA PUBLIC KEY") else {
+                throw RSA.Exception.pemStructure
+            }
+            try self.init(der: der, format: .X509)
         case .PKCS8:
-            try self.init(der: Base64.pemDecode(pem, "PUBLIC KEY"), format: .PKCS8)
+            guard let der = Base64.pemDecode(pem, "PUBLIC KEY") else {
+                throw RSA.Exception.pemStructure
+            }
+            try self.init(der: der, format: .PKCS8)
         }
     }
 

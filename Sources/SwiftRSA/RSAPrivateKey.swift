@@ -153,9 +153,15 @@ public class RSAPrivateKey: CustomStringConvertible {
     public convenience init(pem: String, format: RSA.KeyFormat) throws {
         switch format {
         case .X509:
-            try self.init(der: Base64.pemDecode(pem, "RSA PRIVATE KEY"), format: .X509)
+            guard let der = Base64.pemDecode(pem, "RSA PRIVATE KEY") else {
+                throw RSA.Exception.pemStructure
+            }
+            try self.init(der: der, format: .X509)
         case .PKCS8:
-            try self.init(der: Base64.pemDecode(pem, "PRIVATE KEY"), format: .PKCS8)
+            guard let der = Base64.pemDecode(pem, "PRIVATE KEY") else {
+                throw RSA.Exception.pemStructure
+            }
+            try self.init(der: der, format: .PKCS8)
         }
     }
 

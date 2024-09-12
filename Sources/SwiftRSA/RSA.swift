@@ -152,8 +152,6 @@ public class RSA {
             switch self {
             case .asn1Structure:
                 return "Wrong ASN1 data"
-            case .base64:
-                return "Base64 decoding error"
             case .decrypt(let size):
                 return size == 0 ? "Decryption error" : "Cipher size != \(size) bytes"
             case .encrypt(let size):
@@ -169,8 +167,6 @@ public class RSA {
         
         /// Wrong ASN1 data
         case asn1Structure
-        /// Base64 decoding error
-        case base64
         /// Decryption error
         case decrypt(size: Int = 0)
         /// Encryption error
